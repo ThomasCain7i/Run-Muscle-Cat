@@ -61,8 +61,6 @@ public class RagdollOnOff : MonoBehaviour
         
         mainCoillider.enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
-
-        
     }
 
     void RagdollModeOff()

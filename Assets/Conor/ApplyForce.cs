@@ -13,9 +13,16 @@ public class ApplyForce : MonoBehaviour
 
     public void ApplyForceToPlayer(float magnitude)
     {
-        foreach(Rigidbody rb in rb)
+        foreach (Rigidbody rb in rb)
         {
-            rb.AddForce(Vector3.forward * magnitude, ForceMode.Impulse);
+            // Get the current rotation of the object
+            Quaternion rotation = transform.rotation;
+
+            // Convert the rotation to a forward vector
+            Vector3 forceDirection = rotation * Vector3.forward;
+
+            // Apply force in the direction of the current y rotation
+            rb.AddForce(forceDirection * magnitude, ForceMode.Impulse);
         }
     }
 }
