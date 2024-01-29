@@ -8,6 +8,13 @@ public class Sweeper : MonoBehaviour
     [SerializeField] float acceleration;
     [SerializeField] float timer;
 
+    public ApplyForce applyForce;
+
+    private void Start()
+    {
+        applyForce = FindObjectOfType<ApplyForce>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -42,6 +49,14 @@ public class Sweeper : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             start = true;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            applyForce.ApplyForceToPlayer(80);
         }
     }
 }
