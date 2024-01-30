@@ -19,45 +19,14 @@ public class PlayerSmacker : MonoBehaviour
     public ApplyForce applyForce;
 
     [Header("Settings")]
-    public float timerToHit = 0;
     public float speed = 50;
 
     private void Start()
     {
-        //gameObject.GetComponent<MeshRenderer>().material = invisibleMaterial;
+        gameObject.GetComponent<MeshRenderer>().material = invisibleMaterial;
         animator = GetComponent<Animator>();
-    }
 
-    private void Update()
-    {
-        // If the player doesnt move, then start the timer.
-
-        if(playerRBody.velocity.magnitude >= 0)
-        {
-            timerToHit += Time.deltaTime;
-        }
-        else
-        {
-            timerToHit -= Time.deltaTime;
-        }
-
-        // Failsafe incase it goes below zero
-        if(timerToHit <= 0)
-        {
-            timerToHit = 0;
-        }
-
-        // Checks if the timer has reached the limit to initate the smack
-        TimerTillSmack();
-    }
-
-    public void TimerTillSmack()
-    {
-        // Checks if the timer is five
-        if(timerToHit >= 5)
-        {
-            StartPlayerSmack();
-        }
+        StartPlayerSmack();
     }
 
     public void StartPlayerSmack()
@@ -69,7 +38,7 @@ public class PlayerSmacker : MonoBehaviour
     {
 
         // Sets material to visible
-        //StartCoroutine(SetMaterial());
+        StartCoroutine(SetMaterial());
 
         // Starts the smacking animation
         animator.SetBool("isSmacking", true);
@@ -79,7 +48,18 @@ public class PlayerSmacker : MonoBehaviour
 
         // Resets The Settigs
         animator.SetBool("isSmacking", false);
-        timerToHit = 0;
+
+        Destroy(gameObject);
+    }
+
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            applyForce.ApplyForceToPlayer(100);
+            Debug.Log("This hit the player");
+        }
     }
 
     private IEnumerator SetMaterial()
@@ -89,14 +69,5 @@ public class PlayerSmacker : MonoBehaviour
         yield return new WaitForSeconds(1.59f);
 
         gameObject.GetComponent<MeshRenderer>().material = invisibleMaterial;
-    }
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            applyForce.ApplyForceToPlayer(100);
-            Debug.Log("This hit the player");
-        }
     }
 }
