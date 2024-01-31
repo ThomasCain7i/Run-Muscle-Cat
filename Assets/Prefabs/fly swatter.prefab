@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 46585855057185085}
   m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.32999998, y: 0.84, z: -3.5900002}
-  m_LocalScale: {x: 0.011115, y: 0.014850575, z: 0.012235469}
+  m_LocalScale: {x: 0.011115, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5302024347647189959}
@@ -167,9 +167,8 @@ MonoBehaviour:
   playerSmacker: {fileID: 46585855057185085}
   playerRBody: {fileID: 0}
   animator: {fileID: 4300381304952769389}
-  spawnLocation: {fileID: 0}
   normalMaterial: {fileID: -3033667219593020291, guid: 57897c5b761ff9a4fb5486d5fd995a8d, type: 3}
   invisibleMaterial: {fileID: 2100000, guid: 10925bc13bb822746af659e61b74944e, type: 2}
   applyForce: {fileID: 0}
-  timerToHit: 0
+  soundManager: {fileID: 0}
   speed: 50

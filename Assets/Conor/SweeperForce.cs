@@ -15,7 +15,7 @@ public class SweeperForce : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            applyForce.ApplyForceToPlayer(100);
+            applyForce.ApplyForceToPlayer(55);
         }
     }
 }

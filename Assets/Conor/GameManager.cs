@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public void TimerTillSmack()
     {
         // Checks if the timer is five
-        if (timerToHit >= 5 && !isCreated)
+        if (timerToHit >= 10 && !isCreated)
         {
             StartCoroutine(CreateSmacker());
         }

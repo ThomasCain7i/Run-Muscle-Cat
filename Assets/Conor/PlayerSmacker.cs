@@ -24,8 +24,10 @@ public class PlayerSmacker : MonoBehaviour
 
     private void Awake()
     {
+        // Gets all the relevent components
         animator = GetComponent<Animator>();
         soundManager = FindObjectOfType<SoundManager>();
+        applyForce = FindObjectOfType<ApplyForce>();
 
         StartPlayerSmack();
     }

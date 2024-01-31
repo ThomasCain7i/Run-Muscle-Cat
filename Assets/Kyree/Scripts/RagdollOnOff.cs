@@ -1,6 +1,7 @@
 using Invector.vCharacterController;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,15 +24,14 @@ public class RagdollOnOff : MonoBehaviour
         if (collision.gameObject.CompareTag("Obsticle"))
         {
             RagdollModeOn();
-            StartCoroutine(Example());
+            StartCoroutine(RestartLevel());
         }
     }
 
-    IEnumerator Example()
+    IEnumerator RestartLevel()
     {
-        Debug.Log(Time.time);
-        yield return new WaitForSeconds(5);
-        Debug.Log(Time.time);
+        yield return new WaitForSeconds(3);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

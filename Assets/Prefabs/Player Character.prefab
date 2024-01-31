@@ -291,6 +291,7 @@ MonoBehaviour:
   characterRig: {fileID: 3440439473323611679}
   characterAnimator: {fileID: 3440439473323611674}
   input: {fileID: 3440439473323611672}
+  cameraPlayer: {fileID: 0}
 --- !u!114 &3440439473323611671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,7 +1251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1bfe72fbc87d04e885296b53e91c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 3440439474477148631}
+  target: {fileID: 0}
   smoothCameraRotation: 12
   cullingLayer:
     serializedVersion: 2
@@ -3217,7 +3218,7 @@ GameObject:
   m_Layer: 0
   m_Name: PlayerPuncherSpawnLocation
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3228,14 +3229,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3440439474839903959}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.066, y: 0.85883427, z: -3.343}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 2.39, y: 0.85883427, z: -5.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3440439473323611669}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &3440439474845696259
 GameObject:
   m_ObjectHideFlags: 0
