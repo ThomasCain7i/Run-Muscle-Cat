@@ -22,9 +22,8 @@ public class PlayerSmacker : MonoBehaviour
     [Header("Settings")]
     public float speed = 50;
 
-    private void Start()
+    private void Awake()
     {
-        gameObject.GetComponent<MeshRenderer>().material = invisibleMaterial;
         animator = GetComponent<Animator>();
         soundManager = FindObjectOfType<SoundManager>();
 
@@ -38,15 +37,11 @@ public class PlayerSmacker : MonoBehaviour
 
     private IEnumerator StartSmack()
     {
-
-        // Sets material to visible
-        StartCoroutine(SetMaterial());
-
         // Starts the smacking animation
         animator.SetBool("isSmacking", true);
 
         // Wait
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(3);
 
         // Resets The Settigs
         animator.SetBool("isSmacking", false);
@@ -67,6 +62,7 @@ public class PlayerSmacker : MonoBehaviour
         }
     }
 
+    /*
     private IEnumerator SetMaterial()
     {
         gameObject.GetComponent<MeshRenderer>().material = normalMaterial;
@@ -75,4 +71,5 @@ public class PlayerSmacker : MonoBehaviour
 
         gameObject.GetComponent<MeshRenderer>().material = invisibleMaterial;
     }
+    */
 }

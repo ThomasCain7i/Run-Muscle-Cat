@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject playerSmacker;
     [SerializeField] private GameObject spawnPoint;
     [SerializeField] private float timerToHit;
+    private bool isCreated;
 
     private void Update()
     {
@@ -33,9 +34,19 @@ public class GameManager : MonoBehaviour
     public void TimerTillSmack()
     {
         // Checks if the timer is five
-        if (timerToHit >= 5)
+        if (timerToHit >= 5 && !isCreated)
         {
-            Instantiate(playerSmacker, spawnPoint.transform.position, Quaternion.identity);
+            StartCoroutine(CreateSmacker());
         }
+    }
+
+    private IEnumerator CreateSmacker()
+    {
+        Instantiate(playerSmacker, spawnPoint.transform.position, spawnPoint.transform.rotation);
+        isCreated = true;
+
+        yield return new WaitForSeconds(3.5f);
+
+        isCreated = false;
     }
 }
