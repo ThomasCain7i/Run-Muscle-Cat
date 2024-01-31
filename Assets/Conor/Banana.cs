@@ -6,10 +6,12 @@ using UnityEngine;
 public class Banana : MonoBehaviour
 {
     public ApplyForce applyForce;
+    public SoundManager soundManager;
 
     private void Start()
     {
         applyForce = FindObjectOfType<ApplyForce>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -17,6 +19,8 @@ public class Banana : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             applyForce.ApplyForceToPlayer(80);
+
+            soundManager.PlayBananaSlip();
 
             Destroy(gameObject);
         }

@@ -5,10 +5,12 @@ using UnityEngine;
 public class WallPuncher : MonoBehaviour
 {
     public ApplyForce applyForce;
+    public SoundManager soundManager;
 
     private void Start()
     {
         applyForce = FindObjectOfType<ApplyForce>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -16,7 +18,9 @@ public class WallPuncher : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             applyForce.ApplyForceToPlayer(80);
-            Debug.Log("ForceAPPLOED");
+
+            soundManager.PlayPunch();
+
         }
     }
 }

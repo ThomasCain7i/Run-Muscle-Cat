@@ -17,6 +17,7 @@ public class PlayerSmacker : MonoBehaviour
 
     [Header("Script References")]
     public ApplyForce applyForce;
+    public SoundManager soundManager;
 
     [Header("Settings")]
     public float speed = 50;
@@ -25,6 +26,7 @@ public class PlayerSmacker : MonoBehaviour
     {
         gameObject.GetComponent<MeshRenderer>().material = invisibleMaterial;
         animator = GetComponent<Animator>();
+        soundManager = FindObjectOfType<SoundManager>();
 
         StartPlayerSmack();
     }
@@ -58,7 +60,10 @@ public class PlayerSmacker : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             applyForce.ApplyForceToPlayer(100);
-            Debug.Log("This hit the player");
+
+            soundManager.PlaySlap();
+
+            Destroy(gameObject);
         }
     }
 

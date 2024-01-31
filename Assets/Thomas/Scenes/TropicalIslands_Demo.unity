@@ -33574,6 +33574,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000012617278416, guid: 263e665eb87d7934e885931f5e6fd01e, type: 3}
   m_PrefabInstance: {fileID: 828526261}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &831762319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 831762322}
+  - component: {fileID: 831762321}
+  - component: {fileID: 831762320}
+  m_Layer: 0
+  m_Name: Fall Kill Box
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &831762320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831762319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f94e73f403aba54495f5e9016e0d578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &831762321
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831762319}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &831762322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831762319}
+  m_LocalRotation: {x: -0.008367144, y: -0.15940747, z: 0.05174476, w: 0.98582035}
+  m_LocalPosition: {x: 24.8, y: 15.4, z: -3.2}
+  m_LocalScale: {x: 734.23346, y: 1, z: 34.458}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: -18.37, z: 6.009}
 --- !u!1001 &833292117
 PrefabInstance:
   m_ObjectHideFlags: 0
