@@ -11,6 +11,9 @@ public class RagdollOnOff : MonoBehaviour
     public GameObject characterRig;
     public Animator characterAnimator;
     public vThirdPersonInput input;
+    public vThirdPersonCamera cameraScript;
+    public Camera mainCamera;
+    public Camera ragdollCamera;
 
     void Start()
     {
@@ -47,6 +50,9 @@ public class RagdollOnOff : MonoBehaviour
     {
         characterAnimator.enabled = false;
         input.enabled = false;
+        mainCamera.enabled = false;
+        cameraScript.enabled = false;
+        ragdollCamera.enabled = true;
 
         foreach (Collider col in ragdollColliders)
         {
